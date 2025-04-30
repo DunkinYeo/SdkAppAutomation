@@ -1,9 +1,11 @@
+package AndroidTest;
+
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.URL;
 
-public class MobileTest {
+public class AndroidTest {
     public static void main(String[] args) {
         try {
             DesiredCapabilities cap = new DesiredCapabilities();
@@ -15,8 +17,8 @@ public class MobileTest {
 
             AndroidDriver driver = new AndroidDriver(
                     new URL("http://127.0.0.1:4723/wd/hub"), cap);
-/*
-            // Click 2 + 3
+
+           /*
             driver.findElement(AppiumBy.xpath("digit_2")).click();
             driver.findElement(AppiumBy.xpath("digit_2")).click();
 */
@@ -24,6 +26,5 @@ public class MobileTest {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 }
