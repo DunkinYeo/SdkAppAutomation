@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="S-Patch SDK test app Automation Test Suite">
+    <test verbose="2" preserve-order="true" name="/Users/dunkinyeo/projects/Test Report/src">
+        <classes/>
+    </test>
+</suite>
