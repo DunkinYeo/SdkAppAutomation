@@ -1,13 +1,13 @@
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
-import org.junit.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.Test;
+import org.junit.Test;
 import java.net.URL;
 
 public class MobileTest {
-    @Test
+@Test
     public static void main(String[] args) {
+
         try {
             DesiredCapabilities cap = new DesiredCapabilities();
             cap.setCapability("appium:deviceName", "23cdd45b33017ece");
