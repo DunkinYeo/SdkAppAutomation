@@ -1,12 +1,13 @@
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.junit.Test;
+
 import java.net.URL;
 
 public class MobileTest {
-@Test
+
     public static void main(String[] args) {
+
 
         try {
             DesiredCapabilities cap = new DesiredCapabilities();
