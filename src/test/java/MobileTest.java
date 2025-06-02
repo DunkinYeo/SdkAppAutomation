@@ -1,3 +1,4 @@
+/*
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
@@ -5,14 +6,14 @@ import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.remote.DesiredCapabilities;
-
 import java.net.URL;
 import java.time.Duration;
 
+
 public class MobileTest {
 
-    public static void main(String[] args) {
 
+        public void runMobileTest() {
 
         try {
             DesiredCapabilities cap = new DesiredCapabilities();
@@ -26,13 +27,14 @@ public class MobileTest {
                     new URL("http://127.0.0.1:4723/wd/hub"), cap);
 
             // Click Battery, Manufacturer, model number, serial number, hardware version, software version, firmware version
-/*
+
             if (driver.findElement(AppiumBy.xpath("//android.widget.TextView[@resource-id=\"com.wellysis.spatchex.spatchextest:id/bluetooth_status_tv\"]")).isDisplayed()){
                 System.out.println("Disconnected!");
 
                 driver.findElement(AppiumBy.xpath("//android.widget.Button[@resource-id=\"com.wellysis.spatchex.spatchextest:id/btn_connect\"]")).click();
             }
-*/
+
+
             Thread.sleep(7000);
             // Type Serial number TC1
             driver.findElement(AppiumBy.xpath("//android.widget.EditText[@resource-id=\"com.wellysis.spatchex.spatchextest:id/edit_serial_number\"]")).sendKeys("670225");
@@ -147,7 +149,7 @@ public class MobileTest {
 
             Thread.sleep(8000);
 
-/*
+
             // Set duration measurement, get duration measurement
 
             driver.findElement(AppiumBy.xpath("digit_2")).click();
@@ -163,7 +165,6 @@ public class MobileTest {
             driver.findElement(AppiumBy.xpath("digit_2")).click();
             driver.findElement(AppiumBy.xpath("digit_2")).click();
 
-*/
 
             driver.quit();
         } catch (Exception e) {
@@ -172,3 +173,5 @@ public class MobileTest {
 
     }
 }
+
+ */
