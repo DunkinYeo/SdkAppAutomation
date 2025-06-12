@@ -138,6 +138,7 @@ public class runMobileTest {
                 .release()
                 .perform();
     }
+    asf
 
     @AfterMethod
     public void tearDownDriver() {
