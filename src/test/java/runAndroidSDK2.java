@@ -8,17 +8,15 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.devtools.v133.input.model.TouchPoint;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.*;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 
-public class runMobileTest {
+public class runAndroidSDK2 {
     private ExtentReports extent;
     private ExtentTest test;
     private AndroidDriver driver;
@@ -34,7 +32,6 @@ public class runMobileTest {
         extent.attachReporter(spark);
         extent.setSystemInfo("Platform", "Android");
         extent.setSystemInfo("Tester", "Dunkin Yeo");
-
     }
 
     @BeforeMethod
@@ -44,26 +41,79 @@ public class runMobileTest {
         capabilities.setCapability("appium:platformName", "Android");
         capabilities.setCapability("appium:platformVersion", "10");
         capabilities.setCapability("appium:automationName", "UiAutomator2");
-        capabilities.setCapability("appium:app", "/Users/dunkinyeo/projects/App/SPatch_SDK_debug.apk");
-        capabilities.setCapability("udid", "353524094713874");
+        capabilities.setCapability("appium:app", "/Users/dunkinyeo/projects/App/app-debug (1).apk");
+        //capabilities.setCapability("udid", "353524094713874");
 
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
     }
 
-   // @Test
-    public void runMobileTest() {
-        test = extent.createTest("Launch Android App Test");
+    @Test
+    public void runAndroidSDK2() {
+        test = extent.createTest("Launch Android SDK Test App");
 
         try {
             test.info("App launched successfully");
 
-            Thread.sleep(7000);
+             Thread.sleep(7000);
             test.info("Enter:S-patch Serial Number");
-            driver.findElement(AppiumBy.id("com.wellysis.spatchex.spatchextest:id/edit_serial_number")).sendKeys("670225");
+            driver.findElement(AppiumBy.xpath("//android.widget.EditText[@resource-id=\"com.wellysis.sdk.ui.xml:id/input_serial_number\"]")).sendKeys("670225");
 
-            Thread.sleep(3000);
+//Connect Device
+            Thread.sleep(5000);
             test.info("click: Connect");
-            driver.findElement(AppiumBy.id("com.wellysis.spatchex.spatchextest:id/btn_connect")).click();
+            driver.findElement(AppiumBy.xpath("//android.widget.Button[@resource-id=\"com.wellysis.sdk.ui.xml:id/btn_connect\"]")).click();
+//Disconnect Device
+            Thread.sleep(8000);
+            test.info("Click: Disconnect");
+            driver.findElement(AppiumBy.xpath("//android.widget.Button[@resource-id=\"com.wellysis.sdk.ui.xml:id/btn_disconnect\"]")).click();
+//Reconnect Device
+            Thread.sleep(8000);
+            test.info("click: ReConnect");
+            driver.findElement(AppiumBy.id("//android.widget.Button[@resource-id=\"com.wellysis.sdk.ui.xml:id/btn_connect\"]")).click();
+//Body Sensor Locations works
+
+//Live Battery status
+
+//Model Number
+
+//Serial Number
+
+//Hardware Version
+
+//Software Version
+
+//Firmware Version
+
+//Manufacturer
+
+//WriteSet ECG start
+
+//WriteSet ECG pause
+
+//WriteSet ECG Restart
+
+//WriteSet ECG stop
+
+//WriteSet Delete Bond
+
+//WriteSet Power Off Time
+
+//WriteSet Sign Out
+
+//WriteSet Bonding Enable
+
+//WriteSet Bonding Disable
+
+//WriteSet Measurement Duration
+
+//WriteSet System Reboot
+
+//WriteSet BLE power state enable
+
+//WriteSet BLE power state disable
+
+//WriteSet Symptom Time
+
 
             Thread.sleep(8000);
             test.info("click: S-patch Battery");
@@ -144,6 +194,7 @@ public class runMobileTest {
                 .perform();
     }
 
+    new TouchPoint<>(driver)
 
     @AfterMethod
     public void tearDownDriver() {
